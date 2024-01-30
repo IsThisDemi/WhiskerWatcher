@@ -2,6 +2,8 @@
 # ----------------------------------------------------------------------------
 
 .vscode
+moc_predefs.h
+qmake_qmake_qm_files.qrc
 
 *~
 *.autosave
