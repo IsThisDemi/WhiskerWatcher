@@ -35,8 +35,8 @@ namespace Sensor {
             double getAccuracy() const;
             Wind& setAccuracy(const double accuracy);
 
-            void accept(IConstVisitor& visitor) const override;
-            void accept(IVisitor& visitor) override;
+            virtual void accept(IConstVisitor& visitor) const;
+            virtual void accept(IVisitor& visitor);
     };
 }
 
