@@ -1,7 +1,12 @@
 #include "AbstractSensor.h"
 
 namespace Sensor {
-    AbstractSensor::AbstractSensor(const unsigned int id, std::string name, std::string description, std::string brand) : id(id), name(name), description(description), brand(brand) {}
+    AbstractSensor::AbstractSensor(
+        const unsigned int id, 
+        const std::string name, 
+        const std::string description, 
+        const std::string brand
+    ) : id(id), name(name), description(description), brand(brand) {}
 
     AbstractSensor::~AbstractSensor() {}
 

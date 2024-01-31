@@ -11,7 +11,15 @@ namespace Sensor {
             double accuracy;
 
         public:
-            Temperature(const unsigned int id, std::string name, std::string description, std::string brand, double temperature, char unit, double accuracy);
+            Temperature(
+                const unsigned int id, 
+                const std::string name, 
+                const std::string description, 
+                const std::string brand, 
+                const double temperature, 
+                const char unit, 
+                const double accuracy
+            );
 
             double getTemperature() const;
             Temperature& setTemperature(const double temperature);

@@ -15,7 +15,12 @@ namespace Sensor{
             std::string brand;
         
         protected:
-            AbstractSensor(const unsigned int id, std::string name, std::string description, std::string brand);
+            AbstractSensor(
+                const unsigned int id, 
+                const std::string name, 
+                const std::string description, 
+                const std::string brand
+            );
         
         public:
             virtual ~AbstractSensor();
