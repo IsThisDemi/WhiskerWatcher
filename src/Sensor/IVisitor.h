@@ -8,10 +8,10 @@ namespace Sensor
     class Temperature;
     class Wind;
 
-    class IConstVisitor
+    class IVisitor
     {
     public:
-        virtual ~IConstVisitor(){};
+        virtual ~IVisitor(){};
         virtual void visit(Humidity &humidity) = 0;
         virtual void visit(Light &light) = 0;
         virtual void visit(Temperature &temperature) = 0;

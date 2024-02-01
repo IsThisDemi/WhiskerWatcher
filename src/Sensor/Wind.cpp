@@ -47,4 +47,12 @@ namespace Sensor {
         this->accuracy = accuracy;
         return *this;
     }
+
+    void Wind::accept(IConstVisitor& visitor) const {
+        visitor.visit(*this);
+    }
+
+    void Wind::accept(IVisitor& visitor) {
+        visitor.visit(*this);
+    }
 }

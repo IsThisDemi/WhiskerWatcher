@@ -37,4 +37,12 @@ namespace Sensor {
         this->signalStrength = signalStrength;
         return *this;
     }
+
+    void Light::accept(IConstVisitor& visitor) const {
+        visitor.visit(*this);
+    }
+
+    void Light::accept(IVisitor& visitor) {
+        visitor.visit(*this);
+    }
 }

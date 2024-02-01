@@ -27,4 +27,12 @@ namespace Sensor {
         this->accuracy = accuracy;
         return *this;
     }
+
+    void Humidity::accept(IConstVisitor& visitor) const {
+        visitor.visit(*this);
+    }
+
+    void Humidity::accept(IVisitor& visitor) {
+        visitor.visit(*this);
+    }
 }

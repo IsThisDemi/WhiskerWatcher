@@ -37,4 +37,12 @@ namespace Sensor{
         this->accuracy = accuracy;
         return *this;
     }
+
+    void Temperature::accept(IConstVisitor& visitor) const {
+        visitor.visit(*this);
+    }
+
+    void Temperature::accept(IVisitor& visitor) {
+        visitor.visit(*this);
+    }
 }
