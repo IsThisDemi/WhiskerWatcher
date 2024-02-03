@@ -7,6 +7,7 @@
 #include "Sensor/Light.h"
 #include "Sensor/Temperature.h"
 #include "Sensor/Wind.h"
+#include "Service/Logger/Singleton.h"
 
 namespace Utility {
     namespace Converter {
