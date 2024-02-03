@@ -8,24 +8,24 @@
 #include "../../../Sensor/Temperature.h"
 #include "../../../Sensor/Wind.h"
 
-namespace Component
+namespace Utility
 {
     namespace Converter
     {
         namespace Json
         {
 
-            class JsonVisitor : public IConstVisitor
+            class JsonVisitor : public Sensor::IConstVisitor
             {
             private:
                 QJsonObject object;
 
             public:
                 QJsonObject getObject() const;
-                void visit(const Humidity &humidity);
-                void visit(const Light &light);
-                void visit(const Temperature &temperature);
-                void visit(const Wind &wind);
+                void visit(const Sensor::Humidity &humidity);
+                void visit(const Sensor::Light &light);
+                void visit(const Sensor::Temperature &temperature);
+                void visit(const Sensor::Wind &wind);
             };
         }
     }

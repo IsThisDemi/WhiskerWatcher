@@ -1,7 +1,7 @@
 #include "Json.h"
 #include "JsonVisitor.h"
 
-namespace Component
+namespace Utility
 {
     namespace Converter
     {
@@ -10,19 +10,19 @@ namespace Component
 
             Json::Json(IReader &_reader) : reader(_reader) {}
 
-            const Json::IReader &getReader() const
+            const IReader &Json::getReader() const
             {
                 return reader;
             }
 
-            QJsonObject Json::fromObject(const AbstractComponent component) const
+            QJsonObject Json::fromObject(const Sensor::AbstractSensor sensor) const
             {
                 JsonVisitor json_visitor;
-                item.accept(json_visitor);
+                sensor.accept(json_visitor);
                 return json_visitor.getObject();
             }
 
-            AbstractComponent *Json::toObject(const QJsonObject &json) const
+            Sensor::AbstractSensor *Json::toObject(const QJsonObject &json) const
             {
                 return reader.read(json);
             }
@@ -30,5 +30,3 @@ namespace Component
         }
     }
 }
-
-#endif

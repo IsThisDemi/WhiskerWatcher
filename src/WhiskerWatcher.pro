@@ -44,13 +44,13 @@ HEADERS += \
     Utility/Repository/IRepository.h\
     Utility/Repository/JsonRepository.h\
     \
-    Component/AbstractSensor.h\
-    Component/Humidity.h\
-    Component/Light.h\
-    Component/Temperature.h\
-    Component/Wind.h\
-    Component/IConstVisitor.h\
-    Component/IVisitor.h\
+    Sensor/AbstractSensor.h\
+    Sensor/Humidity.h\
+    Sensor/Light.h\
+    Sensor/Temperature.h\
+    Sensor/Wind.h\
+    Sensor/IConstVisitor.h\
+    Sensor/IVisitor.h\
     \
     Engine/SensorShown.h\
     Engine/FilterVisitor.h\

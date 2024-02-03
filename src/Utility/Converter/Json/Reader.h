@@ -11,14 +11,18 @@ namespace Utility {
         namespace Json {
             class Reader : public IReader {
                 private:
-                    std::map<unsigned int, AbstractComponent*> &getCache() const;
-                    Reader& clear();
-                    virtual AbstractComponent* read(const QJsonObject& object);
+                    std::map<unsigned int, Sensor::AbstractSensor*> cache;
+
                 public:
-                    AbstractComponent* readHumidity(const QJsonObject& object) const;
-                    AbstractComponent* readLight(const QJsonObject& object) const;
-                    AbstractComponent* readTemperature(const QJsonObject& object) const;
-                    AbstractComponent* readWind(const QJsonObject& object) const;
+                    const std::map<unsigned int, Sensor::AbstractSensor*> &getCache() const;
+                    Reader& clear();
+                    virtual Sensor::AbstractSensor* read(const QJsonObject& object);
+                    
+                private:
+                    Sensor::AbstractSensor* readHumidity(const QJsonObject& object) const;
+                    Sensor::AbstractSensor* readLight(const QJsonObject& object) const;
+                    Sensor::AbstractSensor* readTemperature(const QJsonObject& object) const;
+                    Sensor::AbstractSensor* readWind(const QJsonObject& object) const;
             };
         }
     }

@@ -3,15 +3,15 @@
 #include <stdexcept>
 #include <QJsonArray>
 
-#include "../../Sensor/Humidity.h"
-#include "../../Sensor/Light.h"
-#include "../../Sensor/Temperature.h"
-#include "../../Sensor/Wind.h"
+#include "Sensor/Humidity.h"
+#include "Sensor/Light.h"
+#include "Sensor/Temperature.h"
+#include "Sensor/Wind.h"
 
 namespace Utility {
     namespace Converter {
         namespace Json {
-            const std::map<unsigned int, AbstractComponent*> &Reader::getCache() const
+            const std::map<unsigned int, Sensor::AbstractSensor*> &Reader::getCache() const
             {
                 return cache;
             }
@@ -22,7 +22,7 @@ namespace Utility {
                 return *this;
             }
 
-            AbstractComponent *Reader::read(const QJsonObject &object)
+            Sensor::AbstractSensor *Reader::read(const QJsonObject &object)
             {
                 QJsonValue type = object.value("type");
                 if (type.isUndefined())
@@ -59,7 +59,7 @@ namespace Utility {
                 return cache[identifier];
             }
 
-            AbstractComponent *Reader::readHumidity(const QJsonObject &object) const
+            Sensor::AbstractSensor *Reader::readHumidity(const QJsonObject &object) const
             {
                 return new Sensor::Humidity(
                     object.value("id").toInt(),
@@ -71,7 +71,7 @@ namespace Utility {
                 );
             }
 
-            AbstractComponent *Reader::readLight(const QJsonObject &object) const
+            Sensor::AbstractSensor *Reader::readLight(const QJsonObject &object) const
             {
                 return new Sensor::Light(
                     object.value("id").toInt(),
@@ -84,7 +84,7 @@ namespace Utility {
                 );
             }
 
-            AbstractComponent *Reader::readTemperature(const QJsonObject &object) const
+            Sensor::AbstractSensor *Reader::readTemperature(const QJsonObject &object) const
             {
                 return new Sensor::Temperature(
                     object.value("id").toInt(),
@@ -97,7 +97,7 @@ namespace Utility {
                 );
             }
 
-            AbstractComponent *Reader::readWind(const QJsonObject &object) const
+            Sensor::AbstractSensor *Reader::readWind(const QJsonObject &object) const
             {
                 return new Sensor::Wind(
                     object.value("id").toInt(),

@@ -1,18 +1,18 @@
 #include "JsonVisitor.h"
 
-namespace Component
+namespace Utility
 {
     namespace Converter
     {
         namespace Json
         {
 
-            QJsonObject QJsonObject::getObject() const
+            QJsonObject JsonVisitor::getObject() const
             {
                 return object;
             }
 
-            void QJsonObject::visit(const Humidity& humidity )
+            void JsonVisitor::visit(const Sensor::Humidity& humidity )
             {
                 QJsonObject humidity_object;
                 humidity_object.insert("type", QJsonValue::fromVariant("Humidity"));
@@ -25,46 +25,46 @@ namespace Component
                 object = humidity_object;
             }
 
-            void QJsonObject::visit(const Light &light)
+            void JsonVisitor::visit(const Sensor::Light &light)
             {
                 QJsonObject light_object;
                 light_object.insert("type", QJsonValue::fromVariant("Light"));
-                light_object.insert("id", QJsonValue::fromVariant(cpu.getId()));
-                light_object.insert("name", QJsonValue::fromVariant(cpu.getName().c_str()));
-                light_object.insert("description", QJsonValue::fromVariant(cpu.getDescription().c_str()));
-                light_object.insert("brand", QJsonValue::fromVariant(cpu.getBrand().c_str()));
-                light_object.insert("intensity", QJsonValue::fromVariant(cpu.getIntensity()));
-                light_object.insert("color", QJsonValue::fromVariant(cpu.getColor().c_str()));
-                light_object.insert("signalStrength", QJsonValue::fromVariant(cpu.getSignalStrength()));
+                light_object.insert("id", QJsonValue::fromVariant(light.getId()));
+                light_object.insert("name", QJsonValue::fromVariant(light.getName().c_str()));
+                light_object.insert("description", QJsonValue::fromVariant(light.getDescription().c_str()));
+                light_object.insert("brand", QJsonValue::fromVariant(light.getBrand().c_str()));
+                light_object.insert("intensity", QJsonValue::fromVariant(light.getIntensity()));
+                light_object.insert("color", QJsonValue::fromVariant(light.getColor().c_str()));
+                light_object.insert("signalStrength", QJsonValue::fromVariant(light.getSignalStrength()));
                 object = light_object;
             }
 
-            void QJsonObject::visit(const Temperature &temperature)
+            void JsonVisitor::visit(const Sensor::Temperature &temperature)
             {
                 QJsonObject temperature_object;
                 temperature_object.insert("type", QJsonValue::fromVariant("Temperature"));
-                temperature_object.insert("id", QJsonValue::fromVariant(gpu.getIdentifier()));
-                temperature_object.insert("name", QJsonValue::fromVariant(gpu.getName().c_str()));
-                temperature_object.insert("description", QJsonValue::fromVariant(gpu.getDescription().c_str()));
-                temperature_object.insert("brand", QJsonValue::fromVariant(gpu.getBrand().c_str()));
-                temperature_object.insert("temperature", QJsonValue::fromVariant(gpu.getTemperature()));
-                temperature_object.insert("unit", QJsonValue::fromVariant(gpu.getUnit().c_str()));
-                temperature_object.insert("accuracy", QJsonValue::fromVariant(gpu.getAccuracy()));
+                temperature_object.insert("id", QJsonValue::fromVariant(temperature.getId()));
+                temperature_object.insert("name", QJsonValue::fromVariant(temperature.getName().c_str()));
+                temperature_object.insert("description", QJsonValue::fromVariant(temperature.getDescription().c_str()));
+                temperature_object.insert("brand", QJsonValue::fromVariant(temperature.getBrand().c_str()));
+                temperature_object.insert("temperature", QJsonValue::fromVariant(temperature.getTemperature()));
+                temperature_object.insert("unit", QJsonValue::fromVariant(temperature.getUnit()));
+                temperature_object.insert("accuracy", QJsonValue::fromVariant(temperature.getAccuracy()));
                 object = temperature_object;
             }
 
-            void QJsonObject::visit(const Wind &wind)
+            void JsonVisitor::visit(const Sensor::Wind &wind)
             {
                 QJsonObject wind_object;
                 wind_object.insert("type", QJsonValue::fromVariant("Wind"));
-                wind_object.insert("id", QJsonValue::fromVariant(psu.getIdentifier()));
-                wind_object.insert("name", QJsonValue::fromVariant(psu.getName().c_str()));
-                wind_object.insert("description", QJsonValue::fromVariant(psu.getDescription().c_str()));
-                wind_object.insert("brand", QJsonValue::fromVariant(psu.getBrand().c_str()));
-                wind_object.insert("speed", QJsonValue::fromVariant(psu.getSpeed()));
-                wind_object.insert("unit", QJsonValue::fromVariant(psu.getUnit().c_str()));
-                wind_object.insert("direction", QJsonValue::fromVariant(psu.getDirection().c_str()));
-                wind_object.insert("accuracy", QJsonValue::fromVariant(psu.getAccuracy()));
+                wind_object.insert("id", QJsonValue::fromVariant(wind.getId()));
+                wind_object.insert("name", QJsonValue::fromVariant(wind.getName().c_str()));
+                wind_object.insert("description", QJsonValue::fromVariant(wind.getDescription().c_str()));
+                wind_object.insert("brand", QJsonValue::fromVariant(wind.getBrand().c_str()));
+                wind_object.insert("speed", QJsonValue::fromVariant(wind.getSpeed()));
+                wind_object.insert("unit", QJsonValue::fromVariant(wind.getUnit()));
+                wind_object.insert("direction", QJsonValue::fromVariant(wind.getDirection().c_str()));
+                wind_object.insert("accuracy", QJsonValue::fromVariant(wind.getAccuracy()));
                 object = wind_object;
             }
 

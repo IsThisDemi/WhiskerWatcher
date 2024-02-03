@@ -5,7 +5,7 @@
 #include "../../../Sensor/AbstractSensor.h"
 #include "IReader.h"
 
-naespace Utility {
+namespace Utility {
     namespace Converter {
         namespace Json {
             class Json {
@@ -16,7 +16,7 @@ naespace Utility {
                     const IReader& getReader() const;
                     QJsonObject fromObject(const Sensor::AbstractSensor sensor) const;
                     Sensor::AbstractSensor* toObject(const QJsonObject& json) const;
-            }
+            };
         }
     }
 }
