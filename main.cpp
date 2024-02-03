@@ -1,8 +1,10 @@
-#include "mainwindow.h"
+#include "View/MainWindow.h"
+#include "Engine/Memory.h"
 
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
+#include <QFile>
 
 int main(int argc, char *argv[])
 {
@@ -17,7 +19,9 @@ int main(int argc, char *argv[])
             break;
         }
     }
-    MainWindow w;
+    Engine::Memory library;
+    View::MainWindow w(&library);
+    // MainWindow w;
     w.setWindowState(Qt::WindowMaximized);
     w.show();
     return a.exec();

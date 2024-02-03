@@ -9,14 +9,62 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Utility/Converter/Json/Json.cpp\
+    Utility/Converter/Json/JsonVisitor.cpp\
+    Utility/Converter/Json/Reader.cpp\
+    \
+    Utility/DataMapper/JsonFile.cpp\
+    \
+    Utility/Repository/JsonRepository.cpp\
+    \
+    Sensor/AbstractSensor.cpp\
+    Sensor/Humidity.cpp\
+    Sensor/Light.cpp\
+    Sensor/Temperature.cpp\
+    Sensor/Wind.cpp\
+    \
+    Engine/SensorShown.cpp\
+    Engine/FilterVisitor.cpp\
+    Engine/Memory.cpp\
+    Engine/Query.cpp\
+    Engine/ResultSet.cpp\
+    \
     main.cpp \
-    mainwindow.cpp
+    \
+    View\MainWindow.cpp
 
 HEADERS += \
-    mainwindow.h
+    Utility/Converter/Json/IReader.h\
+    Utility/Converter/Json/Json.h\
+    Utility/Converter/Json/JsonVisitor.h\
+    Utility/Converter/Json/Reader.h\
+    \
+    Utility/DataMapper/JsonFile.h\
+    \
+    Utility/Repository/IRepository.h\
+    Utility/Repository/JsonRepository.h\
+    \
+    Component/AbstractSensor.h\
+    Component/Humidity.h\
+    Component/Light.h\
+    Component/Temperature.h\
+    Component/Wind.h\
+    Component/IConstVisitor.h\
+    Component/IVisitor.h\
+    \
+    Engine/SensorShown.h\
+    Engine/FilterVisitor.h\
+    Engine/IEngine.h\
+    Engine/Memory.h\
+    Engine/Query.h\
+    Engine/ResultSet.h\
+    \
+    Service/Container.h\
+    \
+    View/MainWindow.h
 
 FORMS += \
-    mainwindow.ui
+    View/mainwindow.ui
 
 TRANSLATIONS += \
     WhiskerWatcher_en_US.ts
