@@ -106,6 +106,7 @@ namespace Utility {
                     object.value("description").toString().toStdString(),
                     object.value("brand").toString().toStdString(),
                     object.value("speed").toDouble(),
+                    object.value("unit").toString().toStdString(),
                     object.value("direction").toString().toStdString(),
                     object.value("accuracy").toDouble()
                 );

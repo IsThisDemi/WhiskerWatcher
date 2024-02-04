@@ -7,7 +7,7 @@ namespace Sensor {
     class Wind : public AbstractSensor {
         private:
             double speed;
-            char unit;
+            std::string unit;
             std::string direction;
             double accuracy;
 
@@ -18,7 +18,7 @@ namespace Sensor {
                 const std::string description, 
                 const std::string brand, 
                 const double speed, 
-                const char unit, 
+                const std::string unit, 
                 const std::string direction, 
                 const double accuracy
             );
@@ -26,8 +26,8 @@ namespace Sensor {
             double getSpeed() const;
             Wind& setSpeed(const double speed);
 
-            char getUnit() const;
-            Wind& setUnit(const char unit);
+            std::string getUnit() const;
+            Wind& setUnit(const std::string unit);
 
             std::string getDirection() const;
             Wind& setDirection(const std::string direction);

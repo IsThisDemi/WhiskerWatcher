@@ -7,7 +7,7 @@ namespace Sensor {
     class Temperature : public AbstractSensor {
         private:
             double temperature;
-            char unit; 
+            std::string unit; 
             double accuracy;
 
         public:
@@ -17,15 +17,15 @@ namespace Sensor {
                 const std::string description, 
                 const std::string brand, 
                 const double temperature, 
-                const char unit, 
+                const std::string unit, 
                 const double accuracy
             );
 
             double getTemperature() const;
             Temperature& setTemperature(const double temperature);
 
-            char getUnit() const;
-            Temperature& setUnit(const char unit);
+            std::string getUnit() const;
+            Temperature& setUnit(const std::string unit);
 
             double getAccuracy() const;
             Temperature& setAccuracy(const double accuracy);

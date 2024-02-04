@@ -7,7 +7,7 @@ namespace Sensor {
         const std::string description, 
         const std::string brand, 
         const double speed, 
-        const char unit, 
+        const std::string unit, 
         const std::string direction, 
         const double accuracy
     ) : AbstractSensor(id, name, description, brand), speed(speed), unit(unit), direction(direction), accuracy(accuracy) {}
@@ -21,11 +21,11 @@ namespace Sensor {
         return *this;
     }
 
-    char Wind::getUnit() const {
+    std::string Wind::getUnit() const {
         return unit;
     }
 
-    Wind& Wind::setUnit(const char unit) {
+    Wind& Wind::setUnit(const std::string unit) {
         this->unit = unit;
         return *this;
     }

@@ -7,7 +7,7 @@ namespace Sensor{
         const std::string description, 
         const std::string brand, 
         const double temperature, 
-        const char unit, 
+        const std::string unit, 
         const double accuracy
     ) : AbstractSensor(id, name, description, brand), temperature(temperature), unit(unit), accuracy(accuracy) {}
 
@@ -20,11 +20,11 @@ namespace Sensor{
         return *this;
     }
 
-    char Temperature::getUnit() const {
+    std::string Temperature::getUnit() const {
         return unit;
     }
 
-    Temperature& Temperature::setUnit(const char unit) {
+    Temperature& Temperature::setUnit(const std::string unit) {
         this->unit = unit;
         return *this;
     }

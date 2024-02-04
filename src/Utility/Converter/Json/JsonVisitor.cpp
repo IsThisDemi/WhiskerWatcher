@@ -48,7 +48,7 @@ namespace Utility
                 temperature_object.insert("description", QJsonValue::fromVariant(temperature.getDescription().c_str()));
                 temperature_object.insert("brand", QJsonValue::fromVariant(temperature.getBrand().c_str()));
                 temperature_object.insert("temperature", QJsonValue::fromVariant(temperature.getTemperature()));
-                temperature_object.insert("unit", QJsonValue::fromVariant(temperature.getUnit()));
+                temperature_object.insert("unit", QJsonValue::fromVariant(temperature.getUnit().c_str()));
                 temperature_object.insert("accuracy", QJsonValue::fromVariant(temperature.getAccuracy()));
                 object = temperature_object;
             }
@@ -62,7 +62,7 @@ namespace Utility
                 wind_object.insert("description", QJsonValue::fromVariant(wind.getDescription().c_str()));
                 wind_object.insert("brand", QJsonValue::fromVariant(wind.getBrand().c_str()));
                 wind_object.insert("speed", QJsonValue::fromVariant(wind.getSpeed()));
-                wind_object.insert("unit", QJsonValue::fromVariant(wind.getUnit()));
+                wind_object.insert("unit", QJsonValue::fromVariant(wind.getUnit().c_str()));
                 wind_object.insert("direction", QJsonValue::fromVariant(wind.getDirection().c_str()));
                 wind_object.insert("accuracy", QJsonValue::fromVariant(wind.getAccuracy()));
                 object = wind_object;

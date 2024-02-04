@@ -10,7 +10,7 @@ namespace Utility {
             class IReader {
                 public:
                     virtual ~IReader(){};
-                    virtual Sensor::AbstractSensor* read(const QJsonObject& object) const = 0;
+                    virtual Sensor::AbstractSensor* read(const QJsonObject& object) = 0;
             };
         }
     }
