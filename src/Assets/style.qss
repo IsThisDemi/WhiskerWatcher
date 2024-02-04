@@ -1,3 +1,7 @@
 * {
     background-color: #E6DDE5;
 }
+
+QMainWindow {
+    background-color: #E6DDE5;
+}
