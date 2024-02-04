@@ -12,13 +12,13 @@ namespace Utility {
         class JsonFile {
             private:
                 std::string path;
-                Utility::Converter::Json::Json& converter;
+                Converter::Json::Json& converter;
             public:
-                JsonFile(const std::string& path, Utility::Converter::Json::Json& converter);
+                JsonFile(const std::string& path, Converter::Json::Json& converter);
                 static JsonFile fromPath(const std::string& path);
                 const std::string& getPath() const;
                 JsonFile& setPath(const std::string& path);
-                const Utility::Converter::Json::Json& getConverter() const;
+                const Converter::Json::Json& getConverter() const;
                 JsonFile& store(const std::vector<Sensor::AbstractSensor*> sensors);
                 std::vector<Sensor::AbstractSensor*> load();
         };

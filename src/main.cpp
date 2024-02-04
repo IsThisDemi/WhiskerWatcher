@@ -1,10 +1,10 @@
-#include "View/MainWindow.h"
-#include "Engine/Memory.h"
-
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
 #include <QFile>
+
+#include "View/MainWindow.h"
+#include "Engine/Memory.h"
 
 int main(int argc, char *argv[])
 {
@@ -20,9 +20,9 @@ int main(int argc, char *argv[])
         }
     }
     Engine::Memory library;
-    View::MainWindow w(&library);
+    View::MainWindow w(library);
     // MainWindow w;
-    w.setWindowState(Qt::WindowMaximized);
+    // w.setWindowState(Qt::WindowMaximized);
     w.show();
     return a.exec();
 }

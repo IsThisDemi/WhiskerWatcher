@@ -27,10 +27,9 @@ namespace Utility {
             {
                 delete it->second;
             }
-            )
         }
 
-        static JsonRepository JsonRepository::fromPath(const std::string path)
+        JsonRepository JsonRepository::fromPath(const std::string path)
         {
             Converter::Json::Reader reader;
             Converter::Json::Json converter(reader);
@@ -110,4 +109,5 @@ namespace Utility {
             data_mapper.store(readAll());
             return *this;
         }
+    }
 }

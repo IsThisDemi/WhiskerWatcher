@@ -14,7 +14,7 @@ namespace Utility {
                 public:
                     Json(IReader& _reader);
                     const IReader& getReader() const;
-                    QJsonObject fromObject(const Sensor::AbstractSensor sensor) const;
+                    QJsonObject fromObject(const Sensor::AbstractSensor& sensor) const;
                     Sensor::AbstractSensor* toObject(const QJsonObject& json) const;
             };
         }

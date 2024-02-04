@@ -29,6 +29,9 @@ SOURCES += \
     Engine/Query.cpp\
     Engine/ResultSet.cpp\
     \
+    Service/Logger/AbstractLogger.cpp\
+    Service/Logger/Singleton.cpp\
+    \
     main.cpp \
     \
     View\MainWindow.cpp
@@ -59,6 +62,10 @@ HEADERS += \
     Engine/Query.h\
     Engine/ResultSet.h\
     \
+    Service/Logger/Level.h\
+    Service/Logger/AbstractLogger.h\
+    Service/Logger/Singleton.h\
+    \
     Service/Container.h\
     \
     View/MainWindow.h
@@ -71,7 +78,4 @@ TRANSLATIONS += \
 CONFIG += lrelease
 CONFIG += embed_translations
 
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+target = WhiskerWatcher

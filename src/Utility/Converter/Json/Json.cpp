@@ -15,7 +15,7 @@ namespace Utility
                 return reader;
             }
 
-            QJsonObject Json::fromObject(const Sensor::AbstractSensor sensor) const
+            QJsonObject Json::fromObject(const Sensor::AbstractSensor& sensor) const
             {
                 JsonVisitor json_visitor;
                 sensor.accept(json_visitor);

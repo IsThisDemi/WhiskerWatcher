@@ -1,14 +1,16 @@
 #include "MainWindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
-{
-    ui->setupUi(this);
-}
+namespace View {
 
-MainWindow::~MainWindow()
-{
-    delete ui;
+    MainWindow::MainWindow(QWidget *parent)
+    {
+
+    }
+
+    MainWindow::~MainWindow()
+    {
+
+    }
+
 }

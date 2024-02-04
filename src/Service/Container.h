@@ -12,11 +12,11 @@ namespace Service
         class Node 
         {
             private:
-                T *data;
+                T data;
                 Node *next;
 
             public:
-                Node(T *data, Node *next) : data(data), next(next) {}
+                Node(T data, Node *next) : data(data), next(next) {}
 
                 T getData() { return data; }
                 Node &setData(T data) { 

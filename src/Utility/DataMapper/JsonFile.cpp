@@ -6,39 +6,45 @@
 
 #include "../Converter/Json/Reader.h"
 
-namespace Utility {
-    namespace DataMapper {
-        JsonFile::JsonFile(const std::string& path, Utility::Converter::Json::Json& converter) : path(path), converter(converter) {}
+namespace Utility
+{
+    namespace DataMapper
+    {
 
-        JsonFile JsonFile::fromPath(const std::string& path)
+        JsonFile::JsonFile(const std::string &path, Converter::Json::Json &converter)
+            : path(path), converter(converter)
+        {
+        }
+
+        JsonFile JsonFile::fromPath(const std::string &path)
         {
             Converter::Json::Reader reader;
             Converter::Json::Json converter(reader);
-            JsonFile data_mapper(path, converter); 
+            JsonFile data_mapper(path, converter);
             return data_mapper;
         }
 
-        const std::string& JsonFile::getPath() const
+        const std::string &JsonFile::getPath() const
         {
             return path;
         }
 
-        JsonFile& JsonFile::setPath(const std::string& path)
+        JsonFile &JsonFile::setPath(const std::string &path)
         {
             this->path = path;
             return *this;
         }
 
-        const Utility::Converter::Json::Json& JsonFile::getConverter() const
+        const Converter::Json::Json &JsonFile::getConverter() const
         {
             return converter;
         }
 
-        JsonFile& JsonFile::store(const std::vector<Sensor::AbstractSensor*> sensors)
+        JsonFile &JsonFile::store(const std::vector<Sensor::AbstractSensor *> sensors)
         {
             QJsonArray json_sensors;
             for (
-                std::vector<Sensor::AbstractSensor*>::const_iterator it = sensors.begin();
+                std::vector<Sensor::AbstractSensor *>::const_iterator it = sensors.begin();
                 it != sensors.end();
                 it++)
             {
@@ -52,9 +58,9 @@ namespace Utility {
             return *this;
         }
 
-        std::vector<Sensor::AbstractSensor*> JsonFile::load()
+        std::vector<Sensor::AbstractSensor *> JsonFile::load()
         {
-            std::vector<Sensor::AbstractSensor*> sensors;
+            std::vector<Sensor::AbstractSensor *> sensors;
             QFile json_file(path.c_str());
             json_file.open(QFile::ReadOnly);
             QByteArray data = json_file.readAll();
@@ -69,5 +75,6 @@ namespace Utility {
             }
             return sensors;
         }
+
     }
 }
