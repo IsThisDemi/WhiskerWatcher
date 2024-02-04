@@ -34,7 +34,7 @@ SOURCES += \
     \
     main.cpp \
     \
-    View\MainWindow.cpp
+    View/MainWindow.cpp
 
 HEADERS += \
     Utility/Converter/Json/IReader.h\

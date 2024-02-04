@@ -21,8 +21,7 @@ int main(int argc, char *argv[])
     }
     Engine::Memory library;
     View::MainWindow w(library);
-    // MainWindow w;
-    // w.setWindowState(Qt::WindowMaximized);
+    w.setWindowState(Qt::WindowMaximized);
     w.show();
     return a.exec();
 }
