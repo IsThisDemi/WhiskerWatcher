@@ -73,6 +73,9 @@ HEADERS += \
 FORMS += \
     View/mainwindow.ui
 
+RESOURCES += \
+    resources.qrc
+
 TRANSLATIONS += \
     WhiskerWatcher_en_US.ts
 CONFIG += lrelease

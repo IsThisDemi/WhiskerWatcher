@@ -11,9 +11,9 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     a.setWindowIcon(QIcon(":Assets/appIcon.png"));
 
-    QFile stylesheet(":/Assets/style.qss");
+    QFile stylesheet(":Assets/style.qss");
     stylesheet.open(QFile::ReadOnly);
-    a.setStyleSheet(stylesheet.readAll());
+    a.setStyleSheet(QLatin1String(stylesheet.readAll()));
 
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
