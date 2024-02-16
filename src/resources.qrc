@@ -2,5 +2,10 @@
 <qresource>
     <file>Assets/appIcon.png</file>
     <file>Assets/style.qss</file>
+    <file>Assets/Icons/save.png</file>
+    <file>Assets/Icons/save-as.png</file>
+    <file>Assets/Icons/open.png</file>
+    <file>Assets/Icons/add.png</file>
+    <file>Assets/Icons/close.png</file>
 </qresource>
 </RCC>
