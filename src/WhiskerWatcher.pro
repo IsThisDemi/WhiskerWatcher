@@ -28,6 +28,7 @@ SOURCES += \
     Engine/Memory.cpp\
     Engine/Query.cpp\
     Engine/ResultSet.cpp\
+    Engine/SensorBoard.cpp\
     \
     Service/Logger/AbstractLogger.cpp\
     Service/Logger/Singleton.cpp\
@@ -61,6 +62,7 @@ HEADERS += \
     Engine/Memory.h\
     Engine/Query.h\
     Engine/ResultSet.h\
+    Engine/SensorBoard.h\
     \
     Service/Logger/Level.h\
     Service/Logger/AbstractLogger.h\
