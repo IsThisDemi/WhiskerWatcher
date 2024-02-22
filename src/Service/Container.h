@@ -1,69 +1,99 @@
 #ifndef SERVICE_CONTAINER_H
 #define SERVICE_CONTAINER_H
-
 #include <typeinfo>
 
 namespace Service
 {
+
     template <typename T>
     class Container
     {
     public:
-        class Node 
+        class Node
         {
-            private:
-                T data;
-                Node *next;
+        private:
+            T data;
+            Node *next;
 
-            public:
-                Node(T data, Node *next) : data(data), next(next) {}
+        public:
+            Node(T data, Node *next) : data(data), next(next)
+            {
+            }
 
-                T getData() { return data; }
-                Node &setData(T data) { 
-                    this->data = data; 
-                    return *this;
-                }
+            T getData() const
+            {
+                return data;
+            }
 
-                Node *getNext() { return next; }
-                Node &setNext(Node *next) { 
-                    this->next = next; 
-                    return *this;
-                }
+            Node &setData(T data)
+            {
+                this->data = data;
+                return *this;
+            }
+
+            Node *getNext() const
+            {
+                return next;
+            }
+
+            Node &setNext(Node *next)
+            {
+                this->next = next;
+                return *this;
+            }
         };
-    
+
     private:
         Node *head;
 
     public:
-        Container() : head(nullptr) {}
-        ~Container() {  clear(); }
+        Container() : head(nullptr)
+        {
+        }
 
-        unsigned int getSize() const {
+        ~Container()
+        {
+            clear();
+        }
+
+        unsigned int getSize() const
+        {
             unsigned int size = 0;
-            Node *current = head;
-            while (current != nullptr) {
-                current = current->getNext();
+            Node *n = head;
+            while (n != nullptr)
+            {
+                n = n->getNext();
                 size++;
             }
             return size;
         }
 
-        Node *getHead() const { return head; }
+        Node *getHead() const
+        {
+            return head;
+        }
 
-        Container &add(T data) {
+        Container &add(T data)
+        {
             head = new Node(data, head);
             return *this;
         }
 
-        Container &remove(T data) {
-            Node *current = head;
+        Container &remove(T data)
+        {
             Node *previous = nullptr;
-            while (current != nullptr) {
-                if (current->getData() == data) {
-                    if (previous == nullptr) {
-                        head = current->getNext();
-                    } else {
+            Node *current = head;
+            while (current != nullptr)
+            {
+                if (current->getData() == data)
+                {
+                    if (previous != nullptr)
+                    {
                         previous->setNext(current->getNext());
+                    }
+                    else
+                    {
+                        head = current->getNext();
                     }
                     delete current;
                     return *this;
@@ -74,15 +104,30 @@ namespace Service
             return *this;
         }
 
-        Container &clear() {
-            while (head != nullptr) {
+        Container &clear()
+        {
+            while (head != nullptr)
+            {
                 Node *next = head->getNext();
                 delete head;
                 head = next;
             }
             return *this;
         }
+
+        T checkAdded(T newChoice) const
+        {
+            Node *n = head;
+            while (n != nullptr)
+            {
+                if (typeid(*(head->getData())) == typeid(*newChoice))
+                    return head->getData();
+                n = n->getNext();
+            }
+            return nullptr;
+        }
     };
+
 }
 
 #endif
