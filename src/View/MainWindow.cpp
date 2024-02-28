@@ -23,6 +23,10 @@ namespace View {
     {
         setWindowTitle("WhiskerWatcher");
 
+        mainLayout = new QVBoxLayout;
+        centralLayout = new QHBoxLayout;
+        chartLayout = new QVBoxLayout;
+
         //QT actions
         QAction *open = new QAction(
             QIcon(QPixmap((":/Assets/Icons/open.png"))),
