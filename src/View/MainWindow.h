@@ -7,7 +7,7 @@
 #include "Utility/Repository/JsonRepository.h"
 #include "Engine/IEngine.h"
 #include "Engine/Query.h"
-
+#include "ToolBar.h"
 namespace View
 {
 
@@ -17,7 +17,8 @@ namespace View
         private:
             bool has_unsaved_changes;
             QAction *create_item;
-            QToolBar *toolbar;
+            // QToolBar *toolbar;
+            ToolBar *toolBar;
             Engine::IEngine &ricerca;
             Utility::Repository::JsonRepository *repo;
             // ResultWidget*

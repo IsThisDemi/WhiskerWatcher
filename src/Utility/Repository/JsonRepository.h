@@ -16,6 +16,7 @@ namespace Utility {
             public:
                 JsonRepository(Utility::DataMapper::JsonFile data_mapper);
                 virtual ~JsonRepository();
+
                 static JsonRepository fromPath(const std::string path);
                 const DataMapper::JsonFile& getDataMapper() const;
                 const std::map<unsigned int, Sensor::AbstractSensor*>& getRepository() const;
@@ -26,7 +27,9 @@ namespace Utility {
                 virtual JsonRepository& update(Sensor::AbstractSensor* sensor);
                 virtual JsonRepository& remove(const unsigned int id);
                 virtual std::vector<Sensor::AbstractSensor*> readAll() const;
+                virtual JsonRepository& overwrite(const std::vector<Sensor::AbstractSensor*> &sensors);
                 JsonRepository& store();
+                JsonRepository& load();
         };
     }
 }

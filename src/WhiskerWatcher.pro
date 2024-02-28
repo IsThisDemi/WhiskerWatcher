@@ -35,7 +35,8 @@ SOURCES += \
     \
     main.cpp \
     \
-    View/MainWindow.cpp
+    View/MainWindow.cpp\
+    View/ToolBar.cpp
 
 HEADERS += \
     Utility/Converter/Json/IReader.h\
@@ -70,7 +71,8 @@ HEADERS += \
     \
     Service/Container.h\
     \
-    View/MainWindow.h
+    View/MainWindow.h\
+    View/ToolBar.h
 
 FORMS += \
     View/mainwindow.ui

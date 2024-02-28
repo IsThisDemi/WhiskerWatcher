@@ -19,8 +19,10 @@
 namespace View {
 
     MainWindow::MainWindow(Engine::IEngine &ricerca, QWidget *parent)
-        : QMainWindow(parent), ricerca(ricerca)
+        : QMainWindow(parent), toolBar(nullptr), ricerca(ricerca)
     {
+        setWindowTitle("WhiskerWatcher");
+
         //QT actions
         QAction *open = new QAction(
             QIcon(QPixmap((":/Assets/Icons/open.png"))),
@@ -51,11 +53,15 @@ namespace View {
         QMenu *sensor_menu = menuBar()->addMenu("&Sensors");
         sensor_menu->addAction(add_sensor);
 
-        //QT ToolBar
-        toolbar = addToolBar("File Toolbar");
-        toolbar->setAllowedAreas(Qt::BottomToolBarArea);
-        toolbar->setObjectName("Toolbar");
-        toolbar->addAction(add_sensor);
+        // //QT ToolBar
+        // toolbar = addToolBar("File Toolbar");
+        // toolbar->setAllowedAreas(Qt::BottomToolBarArea);
+        // toolbar->setObjectName("Toolbar");
+        // toolbar->addAction(add_sensor);
+
+        toolBar = new ToolBar();
+
+        toolBar->setFixedSize(1024,30);
     }
 
     MainWindow::~MainWindow()

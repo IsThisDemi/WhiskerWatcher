@@ -104,9 +104,34 @@ namespace Utility {
             return sensors;
         }
 
+        JsonRepository& JsonRepository::overwrite(const std::vector<Sensor::AbstractSensor*> &sensors)
+        {
+            for (
+                std::vector<Sensor::AbstractSensor*>::const_iterator it = sensors.begin();
+                it != sensors.end();
+                it++)
+            {
+                create(*it);
+            }
+            return *this;
+        }
+
         JsonRepository& JsonRepository::store()
         {
             data_mapper.store(readAll());
+            return *this;
+        }
+
+        JsonRepository& JsonRepository::load()
+        {
+            std::vector<Sensor::AbstractSensor*> sensors(data_mapper.load());
+            for (
+                std::vector<Sensor::AbstractSensor*>::const_iterator it = sensors.begin();
+                it != sensors.end();
+                it++)
+            {
+                repository[(*it)->getId()] = *it;
+            }
             return *this;
         }
     }
