@@ -75,9 +75,6 @@ HEADERS += \
     View/MainWindow.h\
     View/ToolBar.h
 
-FORMS += \
-    View/mainwindow.ui
-
 RESOURCES += \
     resources.qrc
 

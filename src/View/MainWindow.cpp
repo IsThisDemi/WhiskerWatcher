@@ -21,7 +21,7 @@ namespace View {
     MainWindow::MainWindow(Engine::IEngine &ricerca, QWidget *parent)
         : QMainWindow(parent), toolBar(nullptr), ricerca(ricerca)
     {
-        setWindowTitle("WhiskerWatcher");
+        setWindowTitle("WhiskerWatcher"); 
 
         mainLayout = new QVBoxLayout;
         centralLayout = new QHBoxLayout;
@@ -57,15 +57,15 @@ namespace View {
         QMenu *sensor_menu = menuBar()->addMenu("&Sensors");
         sensor_menu->addAction(add_sensor);
 
-        // //QT ToolBar
-        // toolbar = addToolBar("File Toolbar");
-        // toolbar->setAllowedAreas(Qt::BottomToolBarArea);
-        // toolbar->setObjectName("Toolbar");
-        // toolbar->addAction(add_sensor);
-
         toolBar = new ToolBar();
 
-        toolBar->setFixedSize(1024,30);
+        // toolBar->setFixedSize(1024,30);
+
+        mainLayout->addWidget(toolBar);
+        
+        centralWidget = new QWidget(this);
+        setCentralWidget(centralWidget);
+        centralWidget->setLayout(mainLayout);
     }
 
     MainWindow::~MainWindow()

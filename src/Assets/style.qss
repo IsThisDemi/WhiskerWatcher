@@ -5,3 +5,7 @@
 QMainWindow {
     background-color: #E6DDE5;
 }
+
+toolBar {
+    background-color: #6b2963;
+}
